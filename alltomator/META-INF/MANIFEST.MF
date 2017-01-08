@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Alltomatoes
+Bundle-SymbolicName: alltomator;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: alltomator.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.debug.ui,
+ org.eclipse.m2e.launching,
+ org.eclipse.wst.server.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

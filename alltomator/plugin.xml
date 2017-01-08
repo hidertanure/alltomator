@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Alltomator"
+            id="alltomator.commands.category">
+      </category>
+      <command
+            name="Rodar Tasks"
+            categoryId="alltomator.commands.category"
+            id="alltomator.commands.sampleCommand">
+      </command>
+      <command
+            name="Ajuda!"
+            categoryId="alltomator.commands.category"
+            id="alltomator.commands.helpCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="alltomator.commands.sampleCommand"
+            class="alltomator.handlers.AlltomatorHandler">
+      </handler>
+      <handler
+            commandId="alltomator.commands.helpCommand"
+            class="alltomator.handlers.AlltomatorHelpHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="alltomator.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="Alltomator"
+               mnemonic="A"
+               id="alltomator.menus.sampleMenu">
+            <command
+                  commandId="alltomator.commands.sampleCommand"
+                  mnemonic="R"
+                  id="alltomator.menus.sampleCommand">
+            </command>
+            <command
+                  commandId="alltomator.commands.helpCommand"
+                  mnemonic="H"
+                  id="alltomator.menus.helpCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="alltomator.toolbars.sampleToolbar">
+            <command
+                  commandId="alltomator.commands.sampleCommand"
+                  icon="icons/tomato.png"
+                  tooltip="Rodar Tasks"
+                  id="alltomator.toolbars.sampleCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+
+</plugin>
