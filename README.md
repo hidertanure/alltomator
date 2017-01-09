@@ -8,6 +8,7 @@ For example:
 Create a Maven Builder run configuration with AT_1_mavenTask name and a Apache Tomcat run configuration named AT_2_tomcatTask.
 
 Execute Alltomator and will get:
+
 1. Workspace full refresh.
 2. AT_1_mavenTask executed.
 3. Workspace full refresh. (Becouse Apache Tomcat neede this.)
