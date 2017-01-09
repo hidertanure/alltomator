@@ -66,12 +66,39 @@
                id="alltomator.toolbars.sampleToolbar">
             <command
                   commandId="alltomator.commands.sampleCommand"
-                  icon="icons/tomato.png"
+                  icon="icons/tomato16.png"
                   tooltip="Rodar Tasks"
                   id="alltomator.toolbars.sampleCommand">
             </command>
          </toolbar>
       </menuContribution>
    </extension>
+   <extension point="org.eclipse.debug.core.launchConfigurationTypes">
+	  <launchConfigurationType
+	   id="alltomator.ConfigurationIdentifier"
+	   delegate="alltomator.delagate.AutomatorLaunchConfigurationDelegate"
+	   modes="run,debug"
+	   name="Alltomator"	   
+	   migrationDelegate="com.example.migrationDelegate"
+	   sourceLocatorId="com.example.sourceLookupDirector"
+	   sourcePathComputerId="com.example.sourcePathComputer"
+	   delegateName="Alltomator e suas configurações."
+	   delegateDescription="Alltomator man, precisa falar?">
+	  </launchConfigurationType>	  
+   </extension>
+   <extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+   		<launchConfigurationTypeImage
+	     id="alltomator.LaunchConfigurationTypeImage"
+	     configTypeID="alltomator.ConfigurationIdentifier"
+	     icon="icons/tomato16.png">
+	  </launchConfigurationTypeImage>
+   </extension>
+   <extension point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+  <launchConfigurationTabGroup
+      id="alltomator.TabGroup"
+      type="alltomator.ConfigurationIdentifier"
+      class="alltomator.tabgroup.AlltomatorLaunchConfigurationTabGroupClass">
+  </launchConfigurationTabGroup>
+ </extension>
 
 </plugin>
